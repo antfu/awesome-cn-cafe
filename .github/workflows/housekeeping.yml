@@ -29,7 +29,7 @@ jobs:
       run: npm install -C tools
 
     - name: House Keeping
-      run: npm start -C tools
+      run: npm run housekeeping -C tools
 
     - name: Commit
       uses: EndBug/add-and-commit@v4
