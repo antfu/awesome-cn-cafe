@@ -26,12 +26,10 @@ jobs:
         node-version: '14'
 
     - name: Install
-      run: |
-        cd tools
-        npm install
+      run: npm install -C tools
 
     - name: House Keeping
-      run: node housekeeper.js
+      run: node ./tools/housekeeper.js
 
     - name: Commit
       uses: EndBug/add-and-commit@v4
@@ -41,4 +39,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Test
-      run: npm test
+      run: node test -C tools
